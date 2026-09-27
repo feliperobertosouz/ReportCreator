@@ -1,6 +1,6 @@
 using System;
 
-namespace ReportCreator.Domain.DTOs.Requests
+namespace ReportCreator.Domain.DTOs.Requests.Base
 {
     /// <summary>
     /// Enum que representa as opções de agrupamento/amostragem de tempo para relatórios.
@@ -18,7 +18,7 @@ namespace ReportCreator.Domain.DTOs.Requests
     /// Classe base para requisições de criação de relatório.
     /// Contém propriedades comuns como intervalo de tempo e agrupamento.
     /// </summary>
-    public class RequestReportBase
+    public class RequestReportBaseDTO
     {
         /// <summary>
         /// Indica se o intervalo de tempo será usado. Quando true, Start e End devem ser informados.
@@ -42,5 +42,4 @@ namespace ReportCreator.Domain.DTOs.Requests
         public TimeAggregation Aggregation { get; set; } = TimeAggregation.Daily;
 
         }
-    }
 }

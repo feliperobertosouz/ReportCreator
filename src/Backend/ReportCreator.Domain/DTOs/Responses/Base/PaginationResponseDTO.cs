@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ReportCreator.Domain.DTOs.Responses
+namespace ReportCreator.Domain.DTOs.Responses.Base
 {
     /// <summary>
     /// DTO genérico base para respostas paginadas.

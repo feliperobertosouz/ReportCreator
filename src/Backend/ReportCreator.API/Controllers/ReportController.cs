@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ReportCreator.Application.Apps;
-using ReportCreator.Domain.DTOs.Requests;
+using ReportCreator.Domain.DTOs.Requests.Base;
 
 namespace ReportCreator.API.Controllers
 {
@@ -11,7 +11,7 @@ namespace ReportCreator.API.Controllers
     {
 
         [HttpGet("pagination")]
-        public IActionResult GetReports([FromBody] RequestPaginationBase pagination)
+        public IActionResult GetReports([FromBody] RequestPaginationBaseDTO pagination)
         {
             var paginationApp = new ReportPaginationApp();
             var paginationResponse = paginationApp.Paginate<object>(pagination);
@@ -20,9 +20,13 @@ namespace ReportCreator.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateReport([FromBody] RequestReportBase reportBase)
+        public IActionResult CreateReport([FromBody] RequestReportBaseDTO reportBase)
         {
-            return Ok(new { message = "Report created successfully.", data = reportBase });
+            var reportApp = new ReportApp();
+
+            reportApp.RegisterReport(reportRequest: reportBase);
+
+            return Created();
         }
     }
 }

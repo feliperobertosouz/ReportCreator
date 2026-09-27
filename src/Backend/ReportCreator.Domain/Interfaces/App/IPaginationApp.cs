@@ -1,5 +1,5 @@
-﻿using ReportCreator.Domain.DTOs.Requests;
-using ReportCreator.Domain.DTOs.Responses;
+﻿using ReportCreator.Domain.DTOs.Requests.Base;
+using ReportCreator.Domain.DTOs.Responses.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +10,6 @@ namespace ReportCreator.Domain.Interfaces.Apps
 {
     public interface IPaginationApp
     {
-        public PaginationResponseDTO<T> Paginate<T>(RequestPaginationBase request);
+        public PaginationResponseDTO<T> Paginate<T>(RequestPaginationBaseDTO request);
     }
 }

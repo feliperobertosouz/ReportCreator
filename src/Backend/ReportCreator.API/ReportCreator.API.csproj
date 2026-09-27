@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Shared\ReportCreator.Exception\ReportCreator.Exception.csproj" />
     <ProjectReference Include="..\ReportCreator.Application\ReportCreator.Application.csproj" />
     <ProjectReference Include="..\ReportCreator.Domain\ReportCreator.Domain.csproj" />
   </ItemGroup>

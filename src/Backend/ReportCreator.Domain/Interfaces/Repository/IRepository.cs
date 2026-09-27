@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using ReportCreator.Domain.DTOs.Requests;
+using ReportCreator.Domain.DTOs.Requests.Base;
 
 namespace ReportCreator.Domain.Interfaces.Repository
 {

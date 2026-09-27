@@ -1,5 +1,5 @@
-﻿using ReportCreator.Domain.DTOs.Requests;
-using ReportCreator.Domain.DTOs.Responses;
+﻿using ReportCreator.Domain.DTOs.Requests.Base;
+using ReportCreator.Domain.DTOs.Responses.Base;
 using ReportCreator.Domain.Interfaces.Apps;
 using System;
 using System.Collections.Generic;
@@ -36,12 +36,12 @@ namespace ReportCreator.Application.Apps
         };
 
         
-        public override PaginationResponseDTO<T> Paginate<T>(RequestPaginationBase request)
+        public override PaginationResponseDTO<T> Paginate<T>(RequestPaginationBaseDTO request)
         {
             return base.Paginate<T>(request);
         }
 
-        protected override IEnumerable<T> GetAllItems<T>(RequestPaginationBase request)
+        protected override IEnumerable<T> GetAllItems<T>(RequestPaginationBaseDTO request)
         {
             return reportsTest.Cast<T>();
         }

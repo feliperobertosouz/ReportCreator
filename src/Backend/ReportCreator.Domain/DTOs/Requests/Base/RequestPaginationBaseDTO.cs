@@ -1,6 +1,6 @@
 using System;
 
-namespace ReportCreator.Domain.DTOs.Requests
+namespace ReportCreator.Domain.DTOs.Requests.Base
 {
     /// <summary>
     /// Direção de ordenação para paginação.
@@ -15,7 +15,7 @@ namespace ReportCreator.Domain.DTOs.Requests
     /// DTO base para requisições paginadas em controllers.
     /// Contém página, tamanho, ordenação e utilitários básicos.
     /// </summary>
-    public class RequestPaginationBase
+    public class RequestPaginationBaseDTO
     {
         /// <summary>
         /// Número da página (1-based). Default = 1.

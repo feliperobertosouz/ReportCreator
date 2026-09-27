@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using ReportCreator.Domain.DTOs.Requests;
-using ReportCreator.Domain.DTOs.Responses;
+using ReportCreator.Domain.DTOs.Requests.Base;
+using ReportCreator.Domain.DTOs.Responses.Base;
 using ReportCreator.Domain.Interfaces;
 using ReportCreator.Domain.Interfaces.Apps;
 
@@ -24,7 +24,7 @@ namespace ReportCreator.Application.Apps
         /// concretas que busquem dados de uma fonte real. A implementação padrão
         /// obtém uma lista fictícia e aplica paginação.
         /// </summary>
-        public virtual PaginationResponseDTO<T> Paginate<T>(RequestPaginationBase request)
+        public virtual PaginationResponseDTO<T> Paginate<T>(RequestPaginationBaseDTO request)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
 
@@ -39,7 +39,7 @@ namespace ReportCreator.Application.Apps
         /// Método protegido que aplica lógica de paginação (skip/take) sobre uma coleção.
         /// Retorna um PaginationResponseDTO com os metadados calculados.
         /// </summary>
-        protected PaginationResponseDTO<T> PaginateFromList<T>(IEnumerable<T> allItems, RequestPaginationBase request)
+        protected PaginationResponseDTO<T> PaginateFromList<T>(IEnumerable<T> allItems, RequestPaginationBaseDTO request)
         {
             var itemsList = (allItems ?? Enumerable.Empty<T>()).ToList();
             var total = itemsList.LongCount();
@@ -57,7 +57,7 @@ namespace ReportCreator.Application.Apps
         /// padrão gera dados fictícios; classes filhas podem sobrescrever para buscar
         /// de repositórios, bancos de dados ou APIs.
         /// </summary>
-        protected virtual IEnumerable<T> GetAllItems<T>(RequestPaginationBase request)
+        protected virtual IEnumerable<T> GetAllItems<T>(RequestPaginationBaseDTO request)
         {
             return GenerateFakeItems<T>(DefaultTotalItems);
         }
