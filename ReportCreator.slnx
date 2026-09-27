@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Itens de Solução/">
+    <File Path="README.md" />
+  </Folder>
   <Folder Name="/src/" />
   <Folder Name="/src/Backend/">
     <Project Path="src/Backend/ReportCreator.API/ReportCreator.API.csproj" />
