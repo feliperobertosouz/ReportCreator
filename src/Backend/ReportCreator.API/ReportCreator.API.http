@@ -1,0 +1,6 @@
+@ReportCreator.API_HostAddress = http://localhost:5206
+
+GET {{ReportCreator.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

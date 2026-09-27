@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Backend/">
+    <Project Path="src/Backend/ReportCreator.API/ReportCreator.API.csproj" />
+    <Project Path="src/Backend/ReportCreator.Application/ReportCreator.Application.csproj" Id="f99f66e1-818c-49df-8dc1-4ea750012fbe" />
+    <Project Path="src/Backend/ReportCreator.Domain/ReportCreator.Domain.csproj" Id="574f75a2-6486-43d8-8ce8-d8e9a8e33f99" />
+    <Project Path="src/Backend/ReportCreator.Infrastructure/ReportCreator.Infrastructure.csproj" Id="b4be58d9-5cbc-4489-b945-92d77c54a4b9" />
+  </Folder>
+  <Folder Name="/src/Shared/">
+    <Project Path="src/Shared/ReportCreator.Communication/ReportCreator.Communication.csproj" Id="a533090b-f73b-4ed2-b067-bfd73bacc337" />
+    <Project Path="src/Shared/ReportCreator.Exception/ReportCreator.Exception.csproj" Id="168b687a-ff6d-4945-96b0-628c1c256b9d" />
+  </Folder>
+  <Folder Name="/tests/" />
+</Solution>
